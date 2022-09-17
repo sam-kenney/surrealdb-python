@@ -4,7 +4,7 @@ from typing import Any, List, Optional
 
 import httpx
 
-from surrealdb import AuthenticationError, QueryError
+from surrealdb.error import AuthenticationError, QueryError
 
 
 class SurrealDB:
