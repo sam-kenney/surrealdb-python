@@ -4,14 +4,14 @@ import os
 import nox
 
 
-@nox.session
+@nox.session(reuse_venv=True)
 def reformat(session):
     """Reformat using Black."""
     session.install("black")
     session.run("black", ".")
 
 
-@nox.session
+@nox.session(reuse_venv=True)
 def lint(session):
     """Lint using Flake8."""
     session.install(
@@ -26,17 +26,9 @@ def lint(session):
     session.run("flake8", "--max-complexity=8")
 
 
-@nox.session
+@nox.session(reuse_venv=True)
 def test(session):
     """Run unit tests using Pytest Coverage."""
     session.install("pytest", "pytest-cov")
     session.install("-r", "requirements.txt")
     session.run("pytest", "--cov")
-
-
-@nox.session
-def lintsql(session):
-    """Lint SQL models using SQLFluff."""
-    if os.path.isdir("models"):
-        session.install("sqlfluff")
-        session.run("sqlfluff", "lint", "models")
