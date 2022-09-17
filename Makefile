@@ -1,9 +1,9 @@
 start_db:
 	surreal start \
 	--log debug \
-	--user $(SURREALDB_USERNAME) \
-	--pass $(SURREALDB_PASSWORD) \
-	file://$(PWD)/.db_store
+	--user "root" \
+	--pass "root" \
+	memory
 
 build-lib:
 	@echo "Building lib..."

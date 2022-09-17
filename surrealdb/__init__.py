@@ -14,13 +14,15 @@ __all__ = [
     "__description__",
     "__title__",
     "__version__",
-    "Reference",
     "AuthenticationError",
-    "SurrealDB",
+    "AsyncSurrealDB",
     "QueryError",
+    "Reference",
+    "SurrealDB",
 ]
 
 from surrealdb.__version__ import __description__, __title__, __version__
+from surrealdb.async_surrealdb import AsyncSurrealDB
 from surrealdb.error import AuthenticationError, QueryError
 from surrealdb.reference import Reference
 from surrealdb.surrealdb import SurrealDB

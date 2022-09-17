@@ -29,6 +29,6 @@ def lint(session):
 @nox.session(reuse_venv=True)
 def test(session):
     """Run unit tests using Pytest Coverage."""
-    session.install("pytest", "pytest-cov")
+    session.install("pytest", "pytest-cov", "pytest-asyncio")
     session.install("-r", "requirements.txt")
     session.run("pytest", "--cov")

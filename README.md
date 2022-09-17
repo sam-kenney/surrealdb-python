@@ -13,7 +13,9 @@ pip install unofficial-surreal-database
 This library includes a `SurrealDB` class that can be used to interact with the SurrealDB server.
 
 ### `SurrealDB`
-The `SurrealDB` class is the main class for interacting with the SurrealDB server. It can be instantiated with the following arguments:
+The `SurrealDB` class is the main class for interacting with the SurrealDB server. Additionally, `AsyncSurrealDB`, uses the same API as `SurrealDB`, but uses `httpx.AsyncClient` instead of `httpx.Client`. This is useful for asynchronous applications.
+
+Both classes can be instantiated with the following arguments:
 
 - `username` (str): The username to use when connecting to the server.
 - `password` (str): The password to use when connecting to the server.
